@@ -23,22 +23,23 @@
       <img src="src/sepolia .png" alt="sepolia Icon" class=" rounded-full  p-2 border-yellow-100 h-16 w-16 my-4 mx-20 ">
       </div>
       <!-- Race Status Section -->
-      <div class="bg-white flex-row ">
-         <div id="raceStatus" class=" mx-20 py-2 flex px-6 justify-between items-center" >
-             <h2 class="text-2xl font-bold ">Race Status</h2>
-             <p id="statusText" class="flex mx-auto items-center"></p>
-         </div>
+      <div class="bg-white flex-col justify-center w-full py-2 ">
+         <div id="raceStatus" class="  flex flex-col w-full justify-center items-center" >
+             <h2 class="text-2xl font-bold py-2">Race Status</h2>
+            </div>
+             <p id="statusText" class="flex mx-auto justify-center items-center "></p>
+         
        </div>
 
         <!-- Wallet Connection Section -->
-        <div id="walletPopup" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 w-full bg-blur-sm">
+        <div id="walletPopup" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 w-full ">
             <div class="bg-white flex flex-col justify-center rounded-lg shadow-lg px-16 py-12">
                <img src="src/Metamask.png" alt="MetaMask Icon" class="w-16 h-16 mx-auto mb-4">
                <h2 class="text-xl flex flex-col justify-center mb-4">Connect Your Wallet</h2>
                <button id="connectWallet" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-col justify-center items-center">Connect Wallet</button>
             </div>
          </div>
-         <div id="walletAddress" class="text-blue-500 mb-4 "></div>
+         <div id="walletAddress" class="text-blue-500 mb-4 mx-20"></div>
          
         <!-- Owner Controls (hidden by default) -->
         <div id="ownerControls" class="mt-1 hidden mx-auto flex justify-between bg-gray-400 bg-opacity-70 px-5 py-2 w-11/12 rounded-lg shadow-lg">
