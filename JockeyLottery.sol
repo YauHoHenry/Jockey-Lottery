@@ -223,7 +223,7 @@ contract JockeyLottery {
                 uint prize = (betAmount * prizePool) / horses[winningHorse].totalBets;
                 payable(bettorAddr).transfer(prize);
                 emit PrizeDistributed(bettorAddr, prize);
-                bettorInfo[bettorAddr].totalbets = 0 ; 
+                bettorInfo[bettorAddr].totalbets = 0 ; // Update the corresponding amount to 0
             }}
         }
         emit RaceResult(winningHorse, prizePool);

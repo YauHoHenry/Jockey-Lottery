@@ -543,7 +543,19 @@
           if (betAmount > 0) {
               hasBets = true;
               const horse = await contract.methods.getHorse(i).call();
-              recordHTML += `<li class="bg-gray-100 my-2 front-border py-2 rounded mx-auto px-10 ">No. ${i+1} &nbsp; ${horse.name}: ${betAmount} Wei</li>`;
+              odds = (Number(totalBetAmount*0.85) / Number(horse.totalBets)).toFixed(2);
+              recordHTML += `<li class="my-2 font-bold py-2 rounded mx-auto px-10 shawdow-lg justify-between flex flex-row w-full "> 
+              <div class="flex justify-start">${i+1}. &nbsp; ${horse.name}: ${betAmount} Wei</div>
+              <div class="flex justify-between flex-row w-4/12">
+              <div class="flex w-1/4">${horse.winRate/100} </div>
+              <div class="font-light">|</div> 
+              <div class="flex w-1/4">${odds}</div> 
+              <div class="font-light">| </div>
+              <div class="flex w-1/4">${horse.totalBets}</div>
+              </div>
+              </li> 
+              <hr class="border-gray-400 mx-5">`
+              ;
           }
       }
       recordHTML += '</ul>';
