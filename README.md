@@ -7,7 +7,7 @@ A decentralized horse racing betting DApp on Ethereum (Sepolia testnet).
 - Have some test ETH in your wallet.
 
 ## Usage
-1. Visit [https://your-username.github.io/JockeyLottery-DApp/](https://your-username.github.io/JockeyLottery-DApp/).
+1. Visit (https://yauhohenry.github.io/Jockey-Lottery/).
 2. Connect your MetaMask wallet.
 3. Place bets on horses, view your betting record, or withdraw bets before the race ends.
 4. If you’re the owner, start the race and release results.
