@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jockey Lottery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://preline.co/assets/css/main.min.css">
+</head>
+<body  class="bg-black">
+    <div class=" w-full flex flex-col ">
+     <div class="h-screen flex flex-col pb-6 ">
+      <div class="h-full flex flex-col  ">
+      <div class="by-10 flex items-center  justify-between w-full bg-gray-900  shadow:_1px_1px_1px_rgb(217_217_217_/_1.00)">
+         <img src="src/JockeyLogo.png" alt="Jockey Icon" class="w-16 h-16  my-4 mx-20 fill-yellow-50">
+         <h1 class="text-3xl font-bold text-white  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de">Jockey Lottery</h1>
+         <div class="mx-20"></div>
+      </div>
+      <!-- Race Status Section -->
+      <div class="bg-white flex-row ">
+         <div id="raceStatus" class=" mx-20 flex px-6 justify-between items-center" >
+             <h2 class="text-2xl font-bold ">Race Status</h2>
+             <p id="statusText" class="flex mx-auto items-center"></p>
+         </div>
+       </div>
+
+        <!-- Wallet Connection Section -->
+        <div id="walletPopup" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 w-full ">
+            <div class="bg-white flex flex-col justify-center rounded-lg shadow-lg px-16 py-12">
+               <img src="src/Metamask.png" alt="MetaMask Icon" class="w-16 h-16 mx-auto mb-4">
+               <h2 class="text-xl flex flex-col justify-center mb-4">Connect Your Wallet</h2>
+               <button id="connectWallet" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex flex-col justify-center items-center">Connect Wallet</button>
+            </div>
+         </div>
+         <div id="walletAddress" class="text-white mb-4 "></div>
+         
+        <!-- Owner Controls (hidden by default) -->
+        <div id="ownerControls" class="mb-4 hidden mx-auto flex justify-between bg-gray-500 px-5 py-2 w-11/12 rounded-lg">
+         <p class="mx-20 font-bold text-3xl flex flex-col justify-center text-white">Owner Controls</p>
+         <div class="mx-20 flex">
+            <button id="startRace" class="bg-green-900 text-white px-4 py-2 rounded mr-2 shadow-lg">Start Race</button>
+            <button id="releaseResult" class="bg-red-900 text-white px-4 py-2 rounded shadow-lg">Release Result</button>
+         </div>
+        </div>
+
+        <!-- Horses Display Section -->
+        <div class=" flex flex-col mx-20 bg-gray-800 px-10 py-10 rounded-lg my-10 ">
+         <div clas="flex w-full justify-between items-center mx-auto">
+            <div id="racinginfo" class="mb-4 font-bold text-3xl flex-1  items-center text-white hidden mx-auto">Racing Information</div>
+            <div id="totalBetAmount" class="mb-10 font-bold text-3xl flex-1  items-center text-white mx-auto"></div>
+         </div>
+        <div id="horsesSection" class="grid grid-cols-5 gap-4 mb-6"></div>
+            <!-- Horse cards will be dynamically inserted here -->
+         </div>
+
+        <!-- Betting Section (hidden when race is not active) -->
+ 
+         <div id="bettingSection" class="mb-4 hidden mx-20 flex flex-col py-6 flex-col rounded-lg bg-green-900 px-10">
+               <h2 class="text-xl flex flex-col justify-center mb-4 text-white text-shadow">Place Your Bet</h2>
+               <div>
+               <select id="horseSelect" class="border py-2 pr-8 pl-2 rounded mb-2 ">
+                  <option value="">Select a Horse  </option>
+               </select>
+               <input id="betAmount" type="number" placeholder="Bet Amount (Wei)" class="border p-2 rounded mb-2" step="0.001" min="0.001">
+               <button id="placeBet" class="bg-green-400 text-white px-4 py-2 rounded text-shadow">Place Bet</button>
+               <button id="withdrawBet" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                  Withdraw Bet
+            </button>
+            </div>
+        </div>
+
+        <!-- Betting Information -->
+        <div id="bettingInfoSection" class="flex flex-col mx-20 bg-white p-4 rounded shadow hidden">
+         <h2 class="text-xl font-semibold mb-4 text-shadow">Your Betting Record</h2>
+         <div id="bettingRecord" class="mb-4"></div>
+         </div>
+        
+    </div>
+   </div>
+    </div>
+
+    <!-- Load Web3.js and app.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
